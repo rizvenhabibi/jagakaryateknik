@@ -3,179 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Jagakarya Bali Teknik - Solusi Konstruksi Terpercaya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>PT. JAGAKARYA BALI TEKNIK - General Contractor & Maintenance</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; color: #333; }
+        h1, h2, h3, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .bg-dark-blue { background-color: #0d2235; }
+        .text-gold { color: #c5a059; }
+        .btn-primary { background-color: #0d2235; border-color: #0d2235; }
+        .btn-primary:hover { background-color: #c5a059; border-color: #c5a059; }
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541913057-084930be6289?q=80&w=2070') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
+            background: linear-gradient(rgba(13, 34, 53, 0.8), rgba(13, 34, 53, 0.8)), url('https://images.unsplash.com');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 150px 0;
         }
-        .service-card {
-            transition: transform 0.3s;
-            border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .service-card:hover { transform: translateY(-10px); }
-        .btn-primary { background-color: #0d47a1; border: none; }
-        .navbar-brand { font-weight: 700; color: #0d47a1 !important; }
+        .service-card { transition: 0.3s; border: none; border-bottom: 4px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #c5a059; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 2.5rem; color: #c5a059; }
+        footer { background-color: #081624; color: #eee; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">JAGAKARYA BALI TEKNIK</a>
+            <a class="navbar-brand" href="#">JAGAKARYA <span class="text-gold">BALI TEKNIK</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#proyek">Sektor</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3 px-4" href="https://wa.me/yournumber">Hubungi Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section text-center text-md-start">
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section text-center">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <h1 class="display-4 fw-bold mb-3">Mitra Terpercaya Konstruksi & Teknik di Bali</h1>
-                    <p class="lead mb-4">Kami menghadirkan solusi andal, efisien, dan berkualitas tinggi untuk pembangunan masa depan Anda.</p>
-                    <a href="#layanan" class="btn btn-primary btn-lg px-5">Lihat Layanan</a>
-                </div>
-            </div>
+            <h1 class="display-3 mb-3">PT. JAGAKARYA BALI TEKNIK</h1>
+            <p class="lead mb-4">General Contractor | Supplier | Maintenance Services</p>
+            <p class="mb-5 px-md-5">Solusi konstruksi dan teknik yang andal, efisien, dan berkualitas tinggi di Bali.</p>
+            <a href="#tentang" class="btn btn-primary btn-lg px-5">Kenali Kami Lebih Dekat</a>
         </div>
-    </header>
+    </section>
 
+    <!-- About Section -->
     <section id="tentang" class="py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=2000" class="img-fluid rounded shadow" alt="Konstruksi Bali">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com" class="img-fluid rounded shadow" alt="Tentang Kami">
                 </div>
-                <div class="col-md-6 ps-md-5">
-                    <h2 class="fw-bold">PT Jagakarya Bali Teknik</h2>
-                    <hr class="w-25 mb-4">
-                    <p>Berbasis di Bali, kami adalah perusahaan General Contractor, Supplier, dan Maintenance yang berkomitmen memberikan hasil terbaik bagi klien kami.</p>
-                    <p>Dengan manajemen proyek yang terstruktur, kami mendampingi Anda mulai dari tahap perencanaan, pengadaan material, hingga perawatan berkelanjutan.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="layanan" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-5">Layanan Utama Kami</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 p-4 service-card">
-                        <i class="fas fa-hard-hat fa-3x mb-3 text-primary"></i>
-                        <h4 class="fw-bold">General Contractor</h4>
-                        <p class="text-muted">Kami menangani berbagai jenis pekerjaan konstruksi, antara lain: - Pembangunan villa dan rumah tinggal - Renovasi dan perbaikan bangunan - Pekerjaan struktur, arsitektur, dan finishing - Pekerjaan MEP (Mechanical, Electrical, Plumbing) - Project management dan pengawasan pekerjaan.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 p-4 service-card">
-                        <i class="fas fa-truck-loading fa-3x mb-3 text-primary"></i>
-                        <h4 class="fw-bold">Supplier</h4>
-                        <p class="text-muted">Kami menyediakan berbagai kebutuhan material bangunan dan teknik, seperti: - Material konstruksi umum - Peralatan teknik dan mekanikal - Material listrik dan plumbing - Pengadaan barang sesuai spesifikasi proyek – Batu alam.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 p-4 service-card">
-                        <i class="fas fa-tools fa-3x mb-3 text-primary"></i>
-                        <h4 class="fw-bold">Maintenance</h4>
-                        <p class="text-muted">Layanan perawatan rutin dan perbaikan untuk menjaga performa bangunan dan sistem:Maintenance bangunan dan fasilitas<>- Perawatan sistem listrik, plumbing, dan mekanikal - Service dan perawatan AC - Perawatan kolam renang dan area pendukung</p>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <h2 class="mb-4">Tentang <span class="text-gold">Kami</span></h2>
+                    <p>PT Jagakarya Bali Teknik adalah perusahaan yang bergerak di bidang General Contractor, Supplier, dan Maintenance yang berkomitmen memberikan solusi konstruksi dan teknik yang andal, efisien, dan berkualitas tinggi.</p>
+                    <p>Berbasis di Bali, kami melayani berbagai kebutuhan proyek untuk sektor residensial, villa, komersial, hingga hospitality dengan dukungan tim profesional yang berpengalaman.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h5>Visi</h5>
+                            <small>Menjadi perusahaan kontraktor terdepan di Bali yang dikenal atas kualitas dan ketepatan waktu.</small>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Misi</h5>
+                            <small>Memberikan hasil sesuai standar teknik, harga kompetitif, dan kepuasan klien yang responsif.</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proyek" class="py-5">
+    <!-- Keunggulan Section -->
+    <section class="bg-light py-5">
         <div class="container text-center">
-            <h2 class="fw-bold mb-2">Sektor Keahlian Kami</h2>
-            <p class="mb-5">Melayani berbagai kebutuhan proyek di berbagai industri</p>
+            <h2 class="mb-5">Keunggulan <span class="text-gold">Kami</span></h2>
             <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded">Residensial</div>
+                <div class="col-md-4 col-lg-2 offset-lg-1">
+                    <i class="bi bi-briefcase feature-icon"></i>
+                    <h6 class="mt-3">Profesional</h6>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded">Villa</div>
+                <div class="col-md-4 col-lg-2">
+                    <i class="bi bi-shield-check feature-icon"></i>
+                    <h6 class="mt-3">Kualitas Terjamin</h6>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded">Komersial</div>
+                <div class="col-md-4 col-lg-2">
+                    <i class="bi bi-clock-history feature-icon"></i>
+                    <h6 class="mt-3">Tepat Waktu</h6>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded">Hospitality</div>
+                <div class="col-md-6 col-lg-2">
+                    <i class="bi bi-tags feature-icon"></i>
+                    <h6 class="mt-3">Harga Kompetitif</h6>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <i class="bi bi-gear-wide-connected feature-icon"></i>
+                    <h6 class="mt-3">Layanan Terpadu</h6>
                 </div>
             </div>
         </div>
     </section>
-    <section id="keunggulan" class="py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-2">Keunggulan Kami</h2>
-            <p class="mb-5">Melayani berbagai kebutuhan proyek di berbagai industri</p>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Layanan <span class="text-gold">Utama</span></h2>
             <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded"><h4 class="fw-bold">Profesional & Berpengalaman
-                    </h4><p class="text-muted">Didukung tenaga ahli di bidangnya</p></div>
+                <!-- Contractor -->
+                <div class="col-md-4">
+                    <div class="card h-100 service-card p-4">
+                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Contractor">
+                        <h4>General Contractor</h4>
+                        <ul class="small">
+                            <li>Pembangunan Villa & Rumah</li>
+                            <li>Renovasi Bangunan</li>
+                            <li>Pekerjaan MEP</li>
+                            <li>Manajemen Proyek</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded"><h4 class="fw-bold">Kualitas Terjamin
-                    </h4><p class="text-muted">Mengutamakan standar mutu dan keselamatan</p></div>
+                <!-- Supplier -->
+                <div class="col-md-4">
+                    <div class="card h-100 service-card p-4">
+                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Supplier">
+                        <h4>Supplier</h4>
+                        <ul class="small">
+                            <li>Material Konstruksi Umum</li>
+                            <li>Peralatan Teknik & Mekanikal</li>
+                            <li>Material Listrik & Plumbing</li>
+                            <li>Batu Alam</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded"><h4 class="fw-bold">Tepat Waktu
-                    </h4><p class="text-muted">Perencanaan kerja yang terukur dan terjadwal</p></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded"><h4 class="fw-bold">Harga Kompetitif
-                    </h4><p class="text-muted">Penawaran transparan dan sesuai anggaran</p></div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="p-3 border rounded"><h4 class="fw-bold">Layanan Terpadu
-                    </h4><p class="text-muted">Dari konstruksi hingga maintenance berkelanjutan</p></div>
+                <!-- Maintenance -->
+                <div class="col-md-4">
+                    <div class="card h-100 service-card p-4">
+                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Maintenance">
+                        <h4>Maintenance Services</h4>
+                        <ul class="small">
+                            <li>Perawatan Fasilitas</li>
+                            <li>Service AC</li>
+                            <li>Perawatan Kolam Renang</li>
+                            <li>Sistem Listrik & Plumbing</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="bg-dark text-white py-5">
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-5 bg-dark-blue text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <h5 class="fw-bold mb-3">PT. Jagakarya Bali Teknik</h5>
-                    <p>Solusi konstruksi terintegrasi berbasis di Bali. Kami membangun dengan integritas dan dedikasi.</p>
+                    <h2>Hubungi <span class="text-gold">Kami</span></h2>
+                    <p>Siap memulai proyek Anda? Kami berikan penawaran transparan dan solutif.</p>
+                    <div class="mt-4">
+                        <p><i class="bi bi-geo-alt-fill text-gold me-2"></i> Jl. Raya Kerobokan 8x, Kerobokan Kelod, Kuta Utara, Badung, Bali</p>
+                        <p><i class="bi bi-telephone-fill text-gold me-2"></i> 0877 51 99999 0</p>
+                        <p><i class="bi bi-envelope-fill text-gold me-2"></i> jagakaryabali@gmail.com</p>
+                    </div>
                 </div>
-                <div class="col-md-3 mb-4">
-                    <h5 class="fw-bold mb-3">Kontak</h5>
-                    <p><i class="fas fa-envelope me-2"></i> info@jagakaryabali.com</p>
-                    <p><i class="fas fa-phone me-2"></i> +62 877 51 99999 0</p>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5 class="fw-bold mb-3">Ikuti Kami</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
+                <div class="col-md-6">
+                    <div class="bg-white p-4 rounded text-dark">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" placeholder="Nama Anda">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="email@anda.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Pesan</label>
+                                <textarea class="form-control" rows="4" placeholder="Apa yang bisa kami bantu?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <hr>
-            <p class="text-center mb-0">&copy; 2026 PT Jagakarya Bali Teknik. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 PT Jagakarya Bali Teknik. All Rights Reserved.</p>
+            <small class="text-muted">Your Reliable Partner in Construction, Supply, and Maintenance.</small>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net"></script>
 </body>
 </html>
