@@ -3,213 +3,947 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT. JAGAKARYA BALI TEKNIK - General Contractor & Maintenance</title>
+    <title>PT Jagakarya Bali Teknik - General Contractor & Supplier</title>
+    
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; color: #333; }
-        h1, h2, h3, .navbar-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; }
-        .bg-dark-blue { background-color: #0d2235; }
-        .text-gold { color: #c5a059; }
-        .btn-primary { background-color: #0d2235; border-color: #0d2235; }
-        .btn-primary:hover { background-color: #c5a059; border-color: #c5a059; }
-        .hero-section {
-            background: linear-gradient(rgba(13, 34, 53, 0.8), rgba(13, 34, 53, 0.8)), url('https://images.unsplash.com');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 150px 0;
+        :root {
+            --primary-dark: #0a1f3a;
+            --primary: #1e3c72;
+            --primary-light: #2a5298;
+            --accent: #f8b739;
+            --accent-light: #ffd166;
+            --accent-gradient: linear-gradient(135deg, #f8b739, #ff9f1c);
+            --dark-gradient: linear-gradient(135deg, #0a1f3a, #1e3c72, #2a5298);
+            --soft-gradient: linear-gradient(135deg, #f8f9fa, #ffffff, #f0f4fa);
+            --card-gradient: linear-gradient(135deg, #ffffff, #f8f9ff);
         }
-        .service-card { transition: 0.3s; border: none; border-bottom: 4px solid transparent; }
-        .service-card:hover { transform: translateY(-10px); border-bottom: 4px solid #c5a059; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .feature-icon { font-size: 2.5rem; color: #c5a059; }
-        footer { background-color: #081624; color: #eee; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2d3436;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 50%, #f0f4fa 100%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            border-bottom: 3px solid transparent;
+            border-image: var(--accent-gradient);
+            border-image-slice: 1;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: var(--dark-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-brand span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 10px;
+            color: var(--primary) !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:before {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 150px 0 100px;
+            margin-top: 86px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(248, 183, 57, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(248, 183, 57, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="white" stroke-width="2"/><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="white" stroke-width="2"/><path d="M30 30 L70 30 L70 70 L30 70 Z" fill="none" stroke="white" stroke-width="2"/></svg>');
+            background-size: 100px;
+            pointer-events: none;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff, #f8b739);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #636e72;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 20px;
+            background: var(--card-gradient);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 60, 114, 0.15);
+        }
+        
+        .service-card .card-body {
+            padding: 30px;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .service-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-list li i {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .advantage-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--card-gradient);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .advantage-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .advantage-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(30, 60, 114, 0.12);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .advantage-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-custom {
+            background: var(--accent-gradient);
+            color: var(--primary-dark);
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9f1c, #f8b739);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-custom:hover::before {
+            left: 0;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(248, 183, 57, 0.4);
+            color: var(--primary-dark);
+        }
+        
+        .btn-custom-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-custom-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-custom-outline:hover::before {
+            left: 0;
+        }
+        
+        .btn-custom-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: transparent;
+        }
+        
+        .visi-misi-card {
+            background: var(--card-gradient);
+            border-radius: 20px;
+            padding: 35px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 4px solid;
+            border-image: var(--accent-gradient);
+            border-image-slice: 1;
+        }
+        
+        .visi-misi-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .commitment-section {
+            background: var(--dark-gradient);
+            padding: 80px 0;
+            position: relative;
+            color: white;
+        }
+        
+        .commitment-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(248, 183, 57, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(248, 183, 57, 0.15) 0%, transparent 50%);
+        }
+        
+        .commitment-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-card {
+            background: var(--card-gradient);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(248, 183, 57, 0.2);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 20px;
+            min-width: 30px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-content {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            background: var(--dark-gradient);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(30, 60, 114, 0.3);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30,60,114,0.7), rgba(42,82,152,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            backdrop-filter: blur(2px);
+        }
+        
+        .footer {
+            background: var(--dark-gradient);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+        }
+        
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #f8b739);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .bg-gradient-soft {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f4fa 100%);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .gradient-border {
+            position: relative;
+            border-radius: 20px;
+            background: white;
+            padding: 3px;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            background: var(--accent-gradient);
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">JAGAKARYA <span class="text-gold">BALI TEKNIK</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <span>PT</span> JAGAKARYA <span>BALI</span> TEKNIK
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tentang">Tentang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#layanan">Layanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#keunggulan">Keunggulan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kontak">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="hero-title floating">General Contractor<br>Supplier & Maintenance Services</h1>
+                <p class="hero-subtitle mb-4">Your Reliable Partner in Construction, Supply, and Maintenance with over a decade of excellence in Bali</p>
+                <div class="d-flex gap-3">
+                    <a href="#kontak" class="btn-custom">Konsultasi Gratis</a>
+                    <a href="#layanan" class="btn-custom-outline">Lihat Layanan</a>
+                </div>
+            </div>
+            <!-- Hero Section dengan Gambar Dummy -->
+<div class="col-lg-5">
+    <div class="gallery-item floating" style="height: 350px; animation-delay: 1s; overflow: hidden;">
+        <!-- Opsi 1: Unsplash - Gedung Konstruksi -->
+        <img src="https://images.unsplash.com/photo-1541976590-713941681591?w=500&h=350&fit=crop" 
+             alt="Proyek Konstruksi" 
+             class="w-100 h-100" 
+             style="object-fit: cover;">
+        
+        <!-- Opsi 2: Picsum - Random -->
+        <!-- <img src="https://picsum.photos/500/350?random=1" alt="Random" class="w-100 h-100" style="object-fit: cover;"> -->
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<!-- Tentang Kami -->
+<section id="tentang" class="py-5 bg-gradient-soft">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-title">Tentang Kami</h2>
+                <p class="section-subtitle">Membangun Kepercayaan, Menciptakan Kualitas</p>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="beranda" class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-3 mb-3">PT. JAGAKARYA BALI TEKNIK</h1>
-            <p class="lead mb-4">General Contractor | Supplier | Maintenance Services</p>
-            <p class="mb-5 px-md-5">Solusi konstruksi dan teknik yang andal, efisien, dan berkualitas tinggi di Bali.</p>
-            <a href="#tentang" class="btn btn-primary btn-lg px-5">Kenali Kami Lebih Dekat</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="tentang" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com" class="img-fluid rounded shadow" alt="Tentang Kami">
+        <div class="row">
+            <div class="col-lg-8">
+                <p class="lead mb-4" style="font-size: 1.3rem;">PT Jagakarya Bali Teknik adalah perusahaan yang bergerak di bidang General Contractor, Supplier, dan Maintenance yang berkomitmen memberikan solusi konstruksi dan teknik yang andal, efisien, dan berkualitas tinggi.</p>
+                <p style="color: #636e72;">Berbasis di Bali, kami melayani berbagai kebutuhan proyek untuk sektor residensial, villa, komersial, hingga hospitality. Dengan dukungan tim profesional yang berpengalaman dan manajemen proyek yang terstruktur, PT Jagakarya Bali Teknik hadir sebagai mitra terpercaya dalam setiap tahap pekerjaan, mulai dari perencanaan, pengadaan material, pelaksanaan konstruksi, hingga perawatan berkelanjutan.</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="gallery-item" style="height: 250px;">
+                    <div class="gallery-overlay">
+                        <!-- Opsi 1: Unsplash - Gedung Konstruksi -->
+        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=500&h=350&fit=crop" 
+             alt="Proyek Konstruksi" 
+             class="w-100 h-100" 
+             style="object-fit: cover;">
+                    </div>
                 </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <h2 class="mb-4">Tentang <span class="text-gold">Kami</span></h2>
-                    <p>PT Jagakarya Bali Teknik adalah perusahaan yang bergerak di bidang General Contractor, Supplier, dan Maintenance yang berkomitmen memberikan solusi konstruksi dan teknik yang andal, efisien, dan berkualitas tinggi.</p>
-                    <p>Berbasis di Bali, kami melayani berbagai kebutuhan proyek untuk sektor residensial, villa, komersial, hingga hospitality dengan dukungan tim profesional yang berpengalaman.</p>
-                    
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <h5>Visi</h5>
-                            <small>Menjadi perusahaan kontraktor terdepan di Bali yang dikenal atas kualitas dan ketepatan waktu.</small>
+            </div>
+        </div>
+        
+        <!-- Visi Misi -->
+        <div class="row mt-5 g-4">
+            <div class="col-md-6">
+                <div class="visi-misi-card">
+                    <h3 class="visi-misi-title">Visi</h3>
+                    <p class="mb-0" style="color: #636e72; font-size: 1.1rem;">Menjadi perusahaan kontraktor dan penyedia layanan teknik terdepan di Bali yang dikenal atas kualitas kerja, ketepatan waktu, dan kepercayaan jangka panjang dengan klien.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="visi-misi-card">
+                    <h3 class="visi-misi-title">Misi</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-2"></i>Memberikan hasil pekerjaan yang berkualitas sesuai standar teknik dan keselamatan kerja</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-2"></i>Menyediakan material dan layanan dengan harga kompetitif dan transparan</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-2"></i>Menjalin hubungan kerja jangka panjang yang profesional dan saling menguntungkan</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-2"></i>Mengutamakan kepuasan klien melalui layanan yang responsif dan solutif</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Layanan -->
+<section id="layanan" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Layanan Kami</h2>
+        <p class="section-subtitle text-center">Solusi lengkap untuk setiap tahap proyek Anda</p>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
                         </div>
+                        <h3 class="service-title">General Contractor</h3>
+                        <ul class="service-list">
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Pembangunan villa dan rumah tinggal</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Renovasi dan perbaikan bangunan</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Pekerjaan struktur, arsitektur, finishing</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Pekerjaan MEP</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Project management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h3 class="service-title">Supplier</h3>
+                        <ul class="service-list">
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Material konstruksi umum</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Peralatan teknik dan mekanikal</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Material listrik dan plumbing</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Batu alam</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Pengadaan barang sesuai spesifikasi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h3 class="service-title">Maintenance Services</h3>
+                        <ul class="service-list">
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Maintenance bangunan dan fasilitas</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Perawatan sistem listrik, plumbing, mekanikal</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Service dan perawatan AC</li>
+                            <li><i class="bi bi-arrow-right-circle-fill"></i>Perawatan kolam renang</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Dummy -->
+        <div class="row mt-5">
+                <div class="col-md-3 col-6">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=250&fit=crop" 
+                 alt="Proyek 1" 
+                 class="w-100 h-100" 
+                 style="object-fit: cover;">
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=250&fit=crop" 
+                 alt="Proyek 2" 
+                 class="w-100 h-100" 
+                 style="object-fit: cover;">
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=350&fit=crop" 
+                 alt="Proyek 3" 
+                 class="w-100 h-100" 
+                 style="object-fit: cover;">
+        </div>
+    </div>
+    <div class="col-md-3 col-6">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&h=350&fit=crop" 
+                 alt="Proyek 4" 
+                 class="w-100 h-100" 
+                 style="object-fit: cover;">
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+
+<!-- Keunggulan -->
+<section id="keunggulan" class="py-5 bg-gradient-soft">
+    <div class="container">
+        <h2 class="section-title text-center">Keunggulan Kami</h2>
+        <p class="section-subtitle text-center">Mengapa PT Jagakarya Bali Teknik menjadi pilihan tepat</p>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <h3 class="advantage-title">Profesional & Berpengalaman</h3>
+                    <p class="mb-0" style="color: #636e72;">Didukung tenaga ahli bersertifikasi dengan pengalaman bertahun-tahun</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3 class="advantage-title">Kualitas Terjamin</h3>
+                    <p class="mb-0" style="color: #636e72;">Mengutamakan standar mutu dan keselamatan kerja internasional</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="bi bi-clock"></i>
+                    </div>
+                    <h3 class="advantage-title">Tepat Waktu</h3>
+                    <p class="mb-0" style="color: #636e72;">Perencanaan kerja yang terukur dan terjadwal dengan presisi</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                    <h3 class="advantage-title">Harga Kompetitif</h3>
+                    <p class="mb-0" style="color: #636e72;">Penawaran transparan dan sesuai anggaran tanpa biaya tersembunyi</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h3 class="advantage-title">Layanan Terpadu</h3>
+                    <p class="mb-0" style="color: #636e72;">Dari konstruksi hingga maintenance berkelanjutan dalam satu atap</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Komitmen -->
+<section class="commitment-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <i class="bi bi-quote display-1" style="color: #f8b739; opacity: 0.3;"></i>
+                <h2 class="section-title text-center" style="color: white; -webkit-text-fill-color: white; margin-top: -20px;">Komitmen Kami</h2>
+                <p class="commitment-text">"PT Jagakarya Bali Teknik berkomitmen untuk selalu memberikan hasil terbaik dengan mengedepankan integritas, kualitas, dan kepuasan klien. Kami percaya bahwa keberhasilan proyek tidak hanya diukur dari hasil akhir, tetapi juga dari proses kerja yang profesional dan komunikasi yang baik."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kontak -->
+<section id="kontak" class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Hubungi Kami</h2>
+        <p class="section-subtitle text-center">Konsultasikan kebutuhan proyek Anda dengan tim profesional kami</p>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-card">
+                    <div class="row">
                         <div class="col-md-6">
-                            <h5>Misi</h5>
-                            <small>Memberikan hasil sesuai standar teknik, harga kompetitif, dan kepuasan klien yang responsif.</small>
+                            <h3 class="visi-misi-title" style="font-size: 1.5rem;">PT Jagakarya Bali Teknik</h3>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Alamat</div>
+                                    <p>Jl. Raya Kerobokan 8x, Kerobokan Kelod, Kuta Utara, Badung, Bali</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Telepon</div>
+                                    <p>0877 51 99999 0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="contact-content">
+                                    <div class="contact-label">Email</div>
+                                    <p>jagakaryabali@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                                <div class="gallery-item" style="height: 250px; overflow: hidden;">
+        <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=500&h=250&fit=crop" 
+             alt="Peta Lokasi" 
+             class="w-100 h-100" 
+             style="object-fit: cover;">
+    </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Keunggulan Section -->
-    <section class="bg-light py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">Keunggulan <span class="text-gold">Kami</span></h2>
-            <div class="row g-4">
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <i class="bi bi-briefcase feature-icon"></i>
-                    <h6 class="mt-3">Profesional</h6>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <i class="bi bi-shield-check feature-icon"></i>
-                    <h6 class="mt-3">Kualitas Terjamin</h6>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <i class="bi bi-clock-history feature-icon"></i>
-                    <h6 class="mt-3">Tepat Waktu</h6>
-                </div>
-                <div class="col-md-6 col-lg-2">
-                    <i class="bi bi-tags feature-icon"></i>
-                    <h6 class="mt-3">Harga Kompetitif</h6>
-                </div>
-                <div class="col-md-6 col-lg-2">
-                    <i class="bi bi-gear-wide-connected feature-icon"></i>
-                    <h6 class="mt-3">Layanan Terpadu</h6>
-                </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h4 class="footer-title">PT Jagakarya Bali Teknik</h4>
+                <p class="footer-text">Your Reliable Partner in Construction, Supply, and Maintenance. Melayani kebutuhan konstruksi dan maintenance Anda dengan dedikasi dan profesionalisme tinggi.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <p class="footer-text mb-2">© 2026 PT Jagakarya Bali Teknik</p>
+                <p class="footer-text mb-0">All rights reserved</p>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Services Section -->
-    <section id="layanan" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Layanan <span class="text-gold">Utama</span></h2>
-            <div class="row g-4">
-                <!-- Contractor -->
-                <div class="col-md-4">
-                    <div class="card h-100 service-card p-4">
-                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Contractor">
-                        <h4>General Contractor</h4>
-                        <ul class="small">
-                            <li>Pembangunan Villa & Rumah</li>
-                            <li>Renovasi Bangunan</li>
-                            <li>Pekerjaan MEP</li>
-                            <li>Manajemen Proyek</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Supplier -->
-                <div class="col-md-4">
-                    <div class="card h-100 service-card p-4">
-                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Supplier">
-                        <h4>Supplier</h4>
-                        <ul class="small">
-                            <li>Material Konstruksi Umum</li>
-                            <li>Peralatan Teknik & Mekanikal</li>
-                            <li>Material Listrik & Plumbing</li>
-                            <li>Batu Alam</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Maintenance -->
-                <div class="col-md-4">
-                    <div class="card h-100 service-card p-4">
-                        <img src="https://images.unsplash.com" class="card-img-top rounded mb-3" alt="Maintenance">
-                        <h4>Maintenance Services</h4>
-                        <ul class="small">
-                            <li>Perawatan Fasilitas</li>
-                            <li>Service AC</li>
-                            <li>Perawatan Kolam Renang</li>
-                            <li>Sistem Listrik & Plumbing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Contact Section -->
-    <section id="kontak" class="py-5 bg-dark-blue text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h2>Hubungi <span class="text-gold">Kami</span></h2>
-                    <p>Siap memulai proyek Anda? Kami berikan penawaran transparan dan solutif.</p>
-                    <div class="mt-4">
-                        <p><i class="bi bi-geo-alt-fill text-gold me-2"></i> Jl. Raya Kerobokan 8x, Kerobokan Kelod, Kuta Utara, Badung, Bali</p>
-                        <p><i class="bi bi-telephone-fill text-gold me-2"></i> 0877 51 99999 0</p>
-                        <p><i class="bi bi-envelope-fill text-gold me-2"></i> jagakaryabali@gmail.com</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bg-white p-4 rounded text-dark">
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" placeholder="Nama Anda">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control" placeholder="email@anda.com">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Pesan</label>
-                                <textarea class="form-control" rows="4" placeholder="Apa yang bisa kami bantu?"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Smooth scroll -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 PT Jagakarya Bali Teknik. All Rights Reserved.</p>
-            <small class="text-muted">Your Reliable Partner in Construction, Supply, and Maintenance.</small>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net"></script>
 </body>
 </html>
